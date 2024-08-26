@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import './counrtyDetail.css'
-import { Link, useLocation, useParams } from 'react-router-dom'
+import { Link, useLocation, useOutletContext, useParams } from 'react-router-dom'
 import SingleCountryShimmer from './SingleCountryShimmer'
 
 const SingleCountryDetails = () => {
@@ -12,6 +12,7 @@ const SingleCountryDetails = () => {
     const [notFound , setNotFound] = useState(false)
     const {state} = useLocation()
     console.log(state)
+    const [isDark, setDark] = useOutletContext()
     // console.log(countryName);    
     
     function updateCountryData(data){
@@ -64,7 +65,7 @@ const SingleCountryDetails = () => {
   return (
     <>
     {/* <SingleCountryShimmer></SingleCountryShimmer> */}
-    <main>
+    <main className={`${isDark ? 'dark' : ''}`}>
     <div className="country-details-container">
       <span className="back-button" onClick={() => {history.back()}}>
         <i className="fa-solid fa-arrow-left"></i>&nbsp; Back
