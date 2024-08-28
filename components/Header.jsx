@@ -1,8 +1,9 @@
- import React, { useState } from 'react'
+ import React, { useContext, useState } from 'react'
+import { ThemeContext } from '../contexts/ThemeContext';
  
- export default function Header({theme}) {
+ export default function Header() {
   
-  const [isDark, setDark] = theme
+  const [isDark, setDark] = useContext(ThemeContext)
   // if(isDark){
   //   document.body.classList.add('dark')
   // }

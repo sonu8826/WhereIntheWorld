@@ -12,7 +12,7 @@ export default function CountriesContainer({query}) {
       return response.json()
      }).then((data) => {
         setcountriesData(data)
-        console.log(data)
+        // console.log(data)
      })
   },[])
   // var filteredData = countriesData.filter((country)=> country.name.common.toLowerCase().includes('india'))
