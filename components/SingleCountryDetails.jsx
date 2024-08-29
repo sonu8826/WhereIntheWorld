@@ -1,8 +1,10 @@
-import React, { useContext, useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import './counrtyDetail.css'
 import { Link, useLocation, useParams } from 'react-router-dom'
 import SingleCountryShimmer from './SingleCountryShimmer'
-import { ThemeContext } from '../contexts/ThemeContext'
+// import { ThemeContext } from '../contexts/ThemeContext'
+import { useWindowSize } from '../hooks/useWindowSize'
+import { useTheme } from '../hooks/useTheme'
 
 const SingleCountryDetails = () => {
     // const countryName = new URLSearchParams(location.search).get("name") ;
@@ -14,9 +16,9 @@ const SingleCountryDetails = () => {
     const {state} = useLocation()
     console.log(state)
     // const [isDark, setDark] = useOutletContext()
-    const [isDark] = useContext(ThemeContext)
+    const [isDark] = useTheme()
     // console.log(countryName);    
-    
+    const windowSize = useWindowSize()
     function updateCountryData(data){
       setCountryData({
         name : data.name.common,
@@ -35,7 +37,6 @@ const SingleCountryDetails = () => {
       })
     }
     useEffect(() => {
-
       if(state){
         updateCountryData(state)
         return

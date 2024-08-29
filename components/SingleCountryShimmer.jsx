@@ -11,12 +11,6 @@ const SingleCountryShimmer = () => {
             <div className='para'></div>
             <div className='para'></div>
             <div className='para'></div>
-            <div className='para'></div>
-        </div>
-        <div className='textAreaTwo'>
-            <div className='para'></div>
-            <div className='para'></div>
-            <div className='para'></div>
         </div>
     </div>
   )

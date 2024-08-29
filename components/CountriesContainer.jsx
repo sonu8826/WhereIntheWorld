@@ -26,7 +26,7 @@ export default function CountriesContainer({query}) {
       <div className="countries-container">
         {countriesData
           .filter((country) =>
-            country.name.common.toLowerCase().includes(query)
+            country.name.common.toLowerCase().includes(query) || country.region.toLowerCase().includes(query)
           )
           .map((country) => {
             return (
